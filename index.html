@@ -4,39 +4,70 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
+<title>생활맥주 맥주통합운영시스템</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="static/app.css?v=4">
+<link rel="stylesheet" href="static/erp.css?v=7">
 <meta name="referrer" content="no-referrer">
-<title>생활맥주 운영 현황판</title>
-<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="static/online.css">
+<link rel="stylesheet" href="static/sales-explorer.css">
+<link rel="stylesheet" href="static/sales-analysis.css">
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
-<header class="top">
-  <div class="brand"><b>생활맥주</b><span>운영 현황판</span></div>
-  <nav class="tabs" id="tabs" aria-label="현황판 메뉴" hidden>
-    <a href="#sales" data-tab="sales">매출 분석</a>
-    <a href="#sool" data-tab="sool">술이지</a>
-    <a href="#kegs" data-tab="kegs">직영점 재고</a>
-    <a href="#stock" data-tab="stock">재고 현황</a>
-  </nav>
-  <div class="top-right"><span class="stamp" id="stamp"></span><button type="button" class="link-btn" id="lock" hidden>잠그기</button></div>
-</header>
-<main id="main">
-  <section id="gate" class="gate" aria-labelledby="gate-title">
-    <h1 id="gate-title">운영 현황판</h1>
-    <p>팀 비밀번호를 넣으면 이 기기에서 자료를 풀어 보여 줍니다. 비밀번호 없이는 자료 파일을 받아도 읽을 수 없습니다.</p>
-    <form id="gate-form" autocomplete="on">
-      <input type="text" name="username" value="team" autocomplete="username" hidden>
-      <label for="pw">비밀번호</label>
-      <input type="password" id="pw" name="password" autocomplete="current-password" required>
-      <label class="check"><input type="checkbox" id="remember"> 이 기기에서 기억(개인 휴대폰·PC만)</label>
-      <button type="submit" id="gate-btn">열기</button>
-      <p id="gate-msg" class="msg" role="alert"></p>
-    </form>
-  </section>
-  <section id="view-sales" class="view" hidden></section>
-  <section id="view-sool" class="view" hidden></section>
-  <section id="view-kegs" class="view" hidden></section>
-  <section id="view-stock" class="view" hidden></section>
-</main>
+
+<div class="wrap">
+<nav class="side" aria-label="주 메뉴">
+  <a class="brand" href="#home" aria-label="생활맥주 맥주통합운영시스템 홈"><img class="brand-mark" src="static/dailybeer-logo.png" alt="" width="54" height="54"><div><b>생활맥주</b><small>맥주통합운영시스템</small></div></a>
+  <div class="menu">
+    <div class="menu-t">메뉴</div>
+    
+      <a class="nav" href="#home"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"/></svg>홈</a>
+    
+      <a class="nav" href="#stock"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8l8-4 8 4v8l-8 4-8-4z"/><path d="M4 8l8 4 8-4M12 12v8"/></svg>재고</a>
+    
+      <a class="nav" href="#brew"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>양조</a>
+    
+      <a class="nav" href="#receive"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M7 11l5 5 5-5M4 20h16"/></svg>입고</a>
+    
+      <a class="nav" href="#ship"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>출고</a>
+    
+      <a class="nav" href="#sales"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19v-8M11 19V5M17 19v-6M3 19h18"/></svg>매출 분석</a>
+    
+      <a class="nav" href="#products"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20V9l9-5 9 5v11"/><path d="M7 20v-7h10v7M7 16h10"/></svg>제품 관리</a>
+    
+      <a class="nav" href="#online"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h2l2 10h10l2-7H7"/><circle cx="9" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg>온라인 판매</a>
+    
+      <a class="nav" href="#sooleasy"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19v-8M11 19V5M17 19v-6M3 19h18"/></svg>술이지</a>
+    
+      <a class="nav" href="#settlement"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h12v16l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6"/></svg>정산</a>
+    
+      <a class="nav" href="#calendar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>달력</a>
+    
+  </div>
+  <div class="me">
+    <div class="me-top"><div class="avatar" aria-hidden="true">현</div><div><b>현황판(보기 전용)</b><span id="stamp">입력은 사내 홈페이지에서</span></div></div>
+    <div class="me-acts"><button type="button" id="lock" hidden>잠그기</button></div>
+  </div>
+</nav>
+<main class="main"><div class="inner">
+  <div class="banner info site-toast" id="toast" role="status" hidden></div>
+  <div id="content">
+    <section class="erp-panel site-gate" id="gate" aria-labelledby="gate-title">
+      <div class="erp-section"><div><h2 id="gate-title">생활맥주 맥주통합운영시스템 · 현황판</h2><p>사내 홈페이지 화면 복사본(보기 전용)입니다. 팀 비밀번호를 넣으면 이 기기에서 자료를 풀어 보여 줍니다.</p></div></div>
+      <form id="gate-form" class="erp-form" autocomplete="on">
+        <input type="text" name="username" value="team" autocomplete="username" hidden>
+        <label>비밀번호<input type="password" id="pw" name="password" autocomplete="current-password" required></label>
+        <label class="site-check"><input type="checkbox" id="remember"> 이 기기에서 기억(개인 휴대폰·PC만)</label>
+        <button type="submit" class="erp-button primary" id="gate-btn">열기</button>
+        <p id="gate-msg" class="erp-note" role="alert"></p>
+      </form>
+    </section>
+  </div>
+</div></main>
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" integrity="sha512-CQBWl4fJHWbryGE+Pc7UAxWMUMNMWzWxF4SQo9CgkJIN1kx6djDQZjh3Y8SZ1d+6I+1zze6Z7kHXO7q3UyZAWw==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
 <script src="app.js" defer></script>
 </body>

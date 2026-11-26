@@ -1,0 +1,54 @@
+/* 매출 분석(2026-11-25 리뉴얼)·술이지·직영점 케그 재고 화면 공통 */
+.sa-filters { display: grid; gap: 10px; }
+.sa-filters .erp-section { margin-bottom: 0; }
+.sa-filters select { max-width: 240px; }
+.sa-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; }
+.sa-label { min-width: 5.5em; color: var(--erp-muted); font-size: .85rem; font-weight: 650; }
+.sa-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.sa-chips .erp-chip { gap: 6px; }
+.sa-order { display: inline-grid; place-items: center; width: 19px; height: 19px; border-radius: 50%; background: #fff; color: var(--erp-action); font-size: .74rem; }
+.sa-hint { color: var(--erp-muted); font-size: .8rem; }
+.sa-tag { display: inline-flex; align-items: center; gap: 6px; min-height: 30px; padding: 0 11px; border-radius: 999px; background: #e8f1f7; color: #194b67; font-size: .84rem; font-weight: 600; text-decoration: none; }
+.sa-tag:hover { background: #d8e8f2; }
+.sa-metrics section > span:last-child:not(:first-child) { font-size: .8rem; }
+.sa-channels { display: grid; gap: 12px; padding-block: 16px; }
+.sa-share { display: flex; height: 14px; overflow: hidden; border-radius: 7px; background: var(--erp-line); }
+.sa-share i { display: block; width: var(--w); min-width: 2px; height: 100%; }
+.sa-share-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 4px 20px; margin: 0; padding: 0; list-style: none; font-size: .87rem; }
+.sa-share-list li { display: flex; align-items: center; gap: 10px; padding: 4px 0; border-bottom: 1px dashed #e1e9ef; }
+.sa-share-list a { display: inline-flex; align-items: center; gap: 7px; flex: 1; color: var(--erp-ink); font-weight: 600; text-decoration: none; }
+.sa-share-list a:hover { text-decoration: underline; }
+.sa-share-list a i { width: 10px; height: 10px; border-radius: 2px; flex: none; }
+.sa-share-list b, .sa-share-list span { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.sa-share-list span { min-width: 3.6em; text-align: right; color: var(--erp-muted); }
+.sa-product { padding: 10px 14px; border-left: 3px solid #4b8c9b; border-radius: 6px; background: #eff6f8; font-weight: 600; margin-bottom: 12px; }
+.sa-product small { display: block; margin-top: 4px; color: var(--erp-muted); font-weight: 500; white-space: pre-wrap; }
+.sa-top { border-top: 0; padding-top: 0; }
+.sa-table tbody th { font-weight: 600; }
+.sa-table tbody th.sa-repeat { color: transparent; }
+.sa-table tr.sa-sub { background: #eef4f8 !important; }
+.sa-table tr.sa-sub th, .sa-table tr.sa-sub td { font-weight: 700; color: #1f4760; border-bottom: 1px solid #cddde9; }
+.sa-table tr.sa-sub small { display: inline; margin-left: 8px; }
+
+/* 직영점 케그 재고 · 술이지 */
+.sk-note { margin: 0 0 12px; color: var(--erp-muted); font-size: .86rem; }
+.sk-rules { margin: 6px 0 0; padding-left: 18px; color: var(--erp-muted); font-size: .84rem; display: grid; gap: 2px; }
+.sk-days { display: flex; align-items: center; gap: 8px; min-width: 120px; }
+.sk-days .bar { position: relative; flex: 1; height: 7px; overflow: hidden; border-radius: 4px; background: #e3ebf1; }
+.sk-days .bar i { position: absolute; inset: 0 auto 0 0; width: var(--d); border-radius: 4px; background: #2e7a4d; }
+.sk-days .bar i.mid { background: #b7791f; }
+.sk-days .bar i.high { background: #b2441c; }
+.sk-days b { min-width: 3.4em; text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; font-size: .85rem; }
+.sk-flag { color: #8a3b12; font-size: .8rem; }
+.sk-store summary { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+.sk-store summary b { min-width: 9em; }
+.sk-store summary span { color: var(--erp-muted); font-size: .84rem; font-weight: 500; }
+.sk-issue { border-left: 3px solid #b7791f; padding: 2px 0 2px 12px; margin-bottom: 16px; }
+.sk-issue h3 { font-size: 1rem; margin: 0 0 4px; }
+.sk-issue > p { color: var(--erp-muted); font-size: .86rem; margin: 0 0 8px; }
+.sk-filter { display: flex; flex-wrap: wrap; gap: 8px; align-items: end; margin-bottom: 10px; }
+.sk-filter label { display: grid; gap: 4px; font-size: .85rem; color: var(--erp-muted); }
+@media (max-width: 620px) {
+  .sa-filters select { width: 100%; max-width: none; }
+  .sa-label { min-width: 0; flex-basis: 100%; }
+}

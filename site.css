@@ -1,0 +1,12 @@
+/* 현황판 전용 보충(모양은 사내 홈페이지의 app.css·erp.css·sales-*.css를 그대로 씀) */
+[hidden] { display: none !important; }
+.site-gate { max-width: 520px; width: 100%; margin: 6vh auto 0; }
+.site-gate .erp-form { display: grid; gap: 10px; }
+.site-gate input[type=password] { width: 100%; }
+.site-check { display: flex !important; align-items: center; gap: 8px; font-weight: 500; color: var(--erp-muted, #5d7183); }
+.site-toast { position: sticky; top: 8px; z-index: 20; }
+/* 홈페이지에서 그려 온 화면: 등록·수정·업로드는 사내 홈페이지에서만 하므로 숨긴다 */
+.static-page form, .static-page dialog, .static-page .erp-home-edit, .static-page .erp-sort-panel,
+.static-page details:has(form), .static-page [data-open-dialog], .static-page .erp-pager div { display: none !important; }
+.static-page .erp-tank[data-batch] { cursor: default; }
+.site-readonly { font-size: .8rem; color: var(--erp-muted, #5d7183); }

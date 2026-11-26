@@ -1,0 +1,121 @@
+.erp:has(> .sales-layout) { grid-template-columns: minmax(0, 1fr); }
+.sales-filters { display: grid; gap: 12px; }
+.sales-filters .erp-section { margin-bottom: 0; }
+.sales-filters .erp-filter { padding-bottom: 0; }
+.sales-filters select { max-width: 225px; }
+
+.sales-layout {
+  display: grid;
+  grid-template-columns: minmax(190px, .26fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  min-width: 0;
+  scroll-margin-top: 14px;
+}
+.sales-layout .erp-panel { min-width: 0; }
+.sales-views { padding: 17px 14px; }
+.sales-views h2 { margin: 0 4px 12px; font-size: 1rem; }
+.sales-view-tabs { display: flex; flex-wrap: wrap; gap: 4px; }
+.sales-view-tabs a {
+  flex: 1 0 auto;
+  padding: 7px 8px;
+  text-align: center;
+  border-radius: 6px;
+  color: var(--erp-action);
+  background: #eef3f8;
+  font-size: .82rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.sales-view-tabs a[aria-current] { color: #fff; background: var(--erp-action); }
+.sales-view-options { display: grid; gap: 4px; margin: 12px 0 0; padding: 0; list-style: none; }
+.sales-view-options a {
+  display: block;
+  padding: 8px 10px;
+  border-left: 3px solid transparent;
+  border-radius: 4px;
+  color: var(--erp-ink);
+  font-size: .865rem;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.sales-view-options a[aria-current], .sales-view-options a:hover {
+  border-left-color: #377997;
+  background: #eff5fb;
+  color: #174c69;
+}
+.sales-view-options a[aria-current] { font-weight: 700; }
+
+.sales-results { display: grid; grid-template-columns: minmax(0, 1fr); gap: 15px; padding: clamp(14px, 2vw, 25px); }
+.sales-results-head { display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; align-items: center; }
+.sales-results-head p, .sales-scope-total span, .sales-trail, .sales-product-card p { color: var(--erp-muted); font-size: .85rem; }
+.sales-results-head p { margin-top: 5px; }
+.sales-scope-total { display: grid; justify-items: end; min-width: 125px; }
+.sales-scope-total strong { color: #174c69; font-size: clamp(1.2rem, 2.1vw, 1.55rem); font-variant-numeric: tabular-nums; }
+.sales-scope-total small { margin-left: 4px; font-size: .65em; }
+.sales-trail { display: flex; flex-wrap: wrap; gap: 6px 9px; align-items: center; min-height: 36px; padding: 7px 11px; background: #f1f5f9; border-radius: 6px; }
+.sales-trail b { color: var(--erp-ink); }
+
+.sales-product-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: space-between;
+  gap: 8px 28px;
+  padding: 14px 16px;
+  background: #eff6f8;
+  border-radius: 8px;
+  border-left: 3px solid #4b8c9b;
+}
+.sales-product-card h3 { margin-bottom: 4px; }
+.sales-product-card .sales-description { margin-top: 6px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.sales-product-card dl { display: flex; flex-wrap: wrap; gap: 8px 23px; margin: 0; font-size: .85rem; }
+.sales-product-card dt { color: var(--erp-muted); }
+.sales-product-card dd { margin: 0; font-weight: 600; }
+.sales-product-links { display: flex; flex-wrap: wrap; gap: 5px 16px; flex-basis: 100%; font-size: .85rem; }
+
+.sales-table-wrap { position: relative; min-width: 0; overflow-x: auto; border: 1px solid var(--erp-line); border-radius: 8px; }
+.sales-table { width: 100%; border: 0; border-collapse: collapse; font-size: .865rem; }
+.sales-table th, .sales-table td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #e5ecf3; }
+.sales-table thead th { background: #edf3f8; color: #314e65; font-size: .77rem; white-space: nowrap; }
+.sales-table tbody tr:nth-child(even) { background: #f8fafc; }
+.sales-table tbody tr:focus-within, .sales-table tbody tr:hover { background: #eef6fb; }
+.sales-table tbody th:first-child { min-width: 155px; }
+.sales-table tbody th a { color: #165577; text-underline-offset: 3px; font-weight: 700; }
+.sales-table small { display: block; margin-top: 2px; color: var(--erp-muted); font-size: .76rem; font-weight: 500; }
+.sales-table :is(.sales-num, .sales-money) { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.sales-table .sales-money { min-width: 116px; background: #d7eafa38; }
+.sales-money strong { color: #164d6d; }
+.sales-table th.sales-money small { display: inline; }
+.sales-table .negative, .sales-table .negative strong { color: #a22e24; }
+.sales-table .sales-next { width: 30px; color: #587387; font-size: 1.1rem; }
+.sales-table tfoot { color: #203e54; background: #eaf2f7; font-weight: 700; }
+.sales-table tfoot :is(th,td) { border-bottom: 0; border-top: 1px solid #c9dcea; }
+.sales-bar { display: block; height: 4px; margin-top: 5px; overflow: hidden; border-radius: 4px; background: #dae7ef; }
+.sales-bar i { display: block; background: #30738c; width: var(--bar); height: 100%; }
+.negative .sales-bar i { background: #b84a40; }
+
+.sales-leaders { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(230px,100%),1fr)); gap: 8px; }
+.sales-leaders section { padding: 10px 12px; border-radius: 7px; background: #f4f7fa; }
+.sales-leaders h3 { font-size: .9rem; }
+.sales-leaders ol { margin: 7px 0 0; padding-left: 20px; }
+.sales-leaders li { padding: 2px 0; color: var(--erp-muted); font-size: .825rem; }
+.sales-leaders li b { margin-left: 5px; color: var(--erp-ink); white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+.sales-extra { min-width: 0; }
+.sales-extra:not([open]) > :not(summary) { display: none; }
+.sales-extra > summary { cursor: pointer; color: var(--erp-action); font-size: 1rem; font-weight: 700; }
+.sales-extra > summary span { margin-left: 6px; color: var(--erp-muted); font-size: .83rem; font-weight: 500; }
+.sales-extra[open] > summary { margin-bottom: 16px; }
+.sales-extra > section, .sales-extra > .erp-metrics { margin-bottom: 14px; }
+
+@media (max-width: 1170px) {
+  .sales-layout { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .sales-view-tabs { width: max-content; max-width: 100%; }
+  .sales-view-options { grid-template-columns: repeat(auto-fit,minmax(min(215px,100%),1fr)); }
+}
+@media (max-width: 620px) {
+  .sales-scope-total { justify-items: start; }
+  .sales-filters select { width: 100%; max-width: none; }
+}
