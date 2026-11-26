@@ -3,7 +3,8 @@
 .site-gate { max-width: 520px; width: 100%; margin: 6vh auto 0; }
 .site-gate .erp-form { display: grid; gap: 10px; }
 .site-gate input[type=password] { width: 100%; }
-.site-check { display: flex !important; align-items: center; gap: 8px; font-weight: 500; color: var(--erp-muted, #5d7183); }
+.site-check { display: flex !important; flex-direction: row !important; align-items: center; gap: 8px; font-weight: 500; color: var(--erp-muted, #5d7183); }
+.site-check input { width: auto !important; min-width: 0 !important; height: auto !important; min-height: 0 !important; margin: 0; padding: 0; flex: none; }
 .site-toast { position: sticky; top: 8px; z-index: 20; }
 /* 홈페이지에서 그려 온 화면: 등록·수정·업로드는 사내 홈페이지에서만 하므로 숨긴다 */
 .static-page form, .static-page dialog, .static-page .erp-home-edit, .static-page .erp-sort-panel,
