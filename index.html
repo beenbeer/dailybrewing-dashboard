@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>생활맥주 운영 현황판</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><b>생활맥주</b><span>운영 현황판</span></div>
+  <nav class="tabs" id="tabs" aria-label="현황판 메뉴" hidden>
+    <a href="#sales" data-tab="sales">매출 분석</a>
+    <a href="#sool" data-tab="sool">술이지</a>
+    <a href="#kegs" data-tab="kegs">직영점 재고</a>
+    <a href="#stock" data-tab="stock">재고 현황</a>
+  </nav>
+  <div class="top-right"><span class="stamp" id="stamp"></span><button type="button" class="link-btn" id="lock" hidden>잠그기</button></div>
+</header>
+<main id="main">
+  <section id="gate" class="gate" aria-labelledby="gate-title">
+    <h1 id="gate-title">운영 현황판</h1>
+    <p>팀 비밀번호를 넣으면 이 기기에서 자료를 풀어 보여 줍니다. 비밀번호 없이는 자료 파일을 받아도 읽을 수 없습니다.</p>
+    <form id="gate-form" autocomplete="on">
+      <input type="text" name="username" value="team" autocomplete="username" hidden>
+      <label for="pw">비밀번호</label>
+      <input type="password" id="pw" name="password" autocomplete="current-password" required>
+      <label class="check"><input type="checkbox" id="remember"> 이 기기에서 기억(개인 휴대폰·PC만)</label>
+      <button type="submit" id="gate-btn">열기</button>
+      <p id="gate-msg" class="msg" role="alert"></p>
+    </form>
+  </section>
+  <section id="view-sales" class="view" hidden></section>
+  <section id="view-sool" class="view" hidden></section>
+  <section id="view-kegs" class="view" hidden></section>
+  <section id="view-stock" class="view" hidden></section>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" integrity="sha512-CQBWl4fJHWbryGE+Pc7UAxWMUMNMWzWxF4SQo9CgkJIN1kx6djDQZjh3Y8SZ1d+6I+1zze6Z7kHXO7q3UyZAWw==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+<script src="app.js" defer></script>
+</body>
+</html>
